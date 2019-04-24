@@ -1,0 +1,29 @@
+/* CSS Document */
+body, td, input, select, textarea, h1, h2, h3, h4, h5, h6{ font-size:12px;}
+h1, h2, h3, h4, h5, h6{ font-weight:normal;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{ margin:0; padding:0;}
+ul, ol{ list-style:none;}
+img{border:0; vertical-align:top;}
+input,select,textarea{vertical-align:middle;}
+/* link */
+a{ text-decoration:none; color:#000;}
+a:hover{text-decoration:none;}
+.clearfix:after{ visibility: hidden; display: block; font-size: 0; content: ""; clear: both; height: 0; }  
+.clearfix{*zoom: 1;}
+.clear{clear: both;}
+
+body{font-family: "黑体";}
+
+/*分页*/
+.pages{text-align: center; font-size: 0; margin-bottom: 40px;}
+.pages>*{display: inline-block; vertical-align: top;}
+.pages em,
+.pages i{font-style: normal;}
+.pages a,
+.pages .page-main span{display: inline-block; vertical-align: top; cursor: pointer; width: 44px; height: 44px; color: #697078; font-size: 18px; border: 1px solid #dadada; text-align: center; line-height: 42px; box-sizing: border-box; border-radius: 10px; margin: 0 11px;}
+.pages a.active,
+.pages a:hover,
+.pages .page-main span:hover,
+.pages .page-main span.active{color: white; background-color: #0f84cd; border-color: #0f84cd;}
+.pages .page-total-info{font-size: 18px; color: #697078; line-height: 44px; margin-left: 11px;}
+.pages .page-total-info>i{color: #0f84cd; font-weight: bold;}
