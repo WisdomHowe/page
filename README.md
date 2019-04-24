@@ -28,6 +28,6 @@ new Page(".page", {
 	callback: function(index) {
 		//this.setTotal(total) 使用此方法修改总数量
 		console.log(index)
-}
+	}
 });
 </pre>
