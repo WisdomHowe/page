@@ -16,16 +16,18 @@
 <p>lastTxt: "尾页"</p>
 <p>activeClass: "active" //分页选中类名</p>
 <p>callback: function() {} //回调函数</p>
-<p>new Page(".page", {</p>
-<p>	index: index,</p>
-<p>	size: pageSize,</p>
-<p>	firstTxt: "&lt;&lt;",</p>
-<p>	prevTxt: "&lt;",</p>
-<p>	nextTxt: "&gt;",</p>
-<p>	lastTxt: "&gt;&gt;",</p>
-<p>	total: 30, //先定义一个假的总数量</p>
-<p>	callback: function(index) {</p>
-<p>		//this.setTotal(total) 使用此方法修改总数量</p>
-<p>		console.log(index)</p>
-<p>	}</p>
-<p>});</p>
+<pre>
+new Page(".page", {
+	index: index,
+	size: pageSize,
+	firstTxt: "&lt;&lt;",
+	prevTxt: "&lt;",
+	nextTxt: "&gt;",
+	lastTxt: "&gt;&gt;",
+	total: 30, //先定义一个假的总数量
+	callback: function(index) {
+		//this.setTotal(total) 使用此方法修改总数量
+		console.log(index)
+}
+});
+</pre>
