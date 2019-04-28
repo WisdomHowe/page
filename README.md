@@ -1,5 +1,6 @@
 # 分页
 
+调用方法如下：
 ```JavaScript
 new Page(".page", {
 	index: 1, //最小值为1
