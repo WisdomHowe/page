@@ -86,6 +86,7 @@
 		this.isEven = options.isEven;
 		this.callback = options.callback;
 		this.activeClass = options.activeClass;
+		this.data = options.data;
 		this.init();
 	}
 	Page.prototype.init = function(){
@@ -172,7 +173,7 @@
 		} else if(util.hasClass(dom, "page-next")) { //下一页
 			this.index = this.index + 1 > this.totalPage ? this.totalPage : this.index + 1;
 		} else {
-			var domIndex = parseInt($(dom).attr("data-page"));
+			var domIndex = parseInt(util.attr(dom, "data-page"));
 			if(!!domIndex) {
 				this.index = domIndex;
 			}

@@ -12,24 +12,20 @@
 
 	<body>
 		<div class="pages page"></div>
-		
+
 		<script type="text/javascript">
-			
-			window.onload = function() {
-				new Page(".page", {
-					index: index,
-					size: pageSize,
-					firstTxt: "&lt;&lt;",
-					prevTxt: "&lt;",
-					nextTxt: "&gt;",
-					lastTxt: "&gt;&gt;",
-					total: 30, //先定义一个假的总数量
-					callback: function(index){
-						//this.setTotal(total) 使用此方法修改总数量
-						console.log(index)
-					}
-				});
-			}
+			new Page(".page", {
+				size: 4,
+				firstTxt: "&lt;&lt;",
+				prevTxt: "&lt;",
+				nextTxt: "&gt;",
+				lastTxt: "&gt;&gt;",
+				total: 30, //先定义一个假的总数量
+				callback: function(index) {
+					//this.setTotal(total) 使用此方法修改总数量
+					console.log(index)
+				}
+			});
 		</script>
 	</body>
 
