@@ -194,11 +194,13 @@
 	Page.prototype.inputClick = function(){
 		var index = parseInt(this.pInputText.value);
 		if(!isNaN(index)){
-			if(index < 0){
-				index = 0;
-			}else if(index > )
-			this.index = (index < 0 ? 0 : (index > this.totalPage ? this.totalPage : index));
-			console.log(this.index)
+			if(index < 1){
+				this.index = 1;
+			}else if(index > this.totalPage){
+				this.index = this.totalPage
+			}else{
+				this.index = index;
+			}
 			this.setPage();
 		}
 	}
