@@ -25,5 +25,10 @@ body{font-family: "黑体";}
 .pages a:hover,
 .pages .page-main span:hover,
 .pages .page-main span.active{color: white; background-color: #0f84cd; border-color: #0f84cd;}
+.pages .page-input{font-size: 18px; line-height: 44px;}
+.pages .page-input input{height: 44px; box-sizing: border-box; vertical-align: top; border-radius: 5px;}
+.pages .page-input .page-text{width: 40px; margin: 0 5px; border: 1px solid #dadada; text-align: center; font-size: 16px;}
+.pages .page-input .page-btn{width: 50px; margin: 0 5px; font-size: 18px; background: white; border: 1px solid #dadada; cursor: pointer;}
+.pages .page-input .page-btn:hover{color: white; background-color: #0f84cd; border-color: #0f84cd;}
 .pages .page-total-info{font-size: 18px; color: #697078; line-height: 44px; margin-left: 11px;}
 .pages .page-total-info>i{color: #0f84cd; font-weight: bold;}

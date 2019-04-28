@@ -3,7 +3,7 @@
 		index: 1,
 		size: 4, //默认每页显示四条数据
 		show: 4, //，默认显示四页
-		total: 0,
+		total: 100,
 		template: "",
 		isEven: 0,
 		isPrev: true, //是否创建按钮
@@ -11,6 +11,7 @@
 		isFirst: true, 
 		isLast: true,
 		isTotal: true,
+		isText: true, //是否显示跳转输入框
 		prevTxt: "上一页",
 		nextTxt: "下一页",
 		firstTxt: "首页",
@@ -97,7 +98,11 @@
 		this.setTotalText(this.totalPage);
 		this.callback(this.index);
 		var pageClick = this.pageClick.bind(this);
-		util.on(this.el, "click", pageClick)
+		util.on(this.el, "click", pageClick);
+		if(options.isText){
+			var inputClick = this.inputClick.bind(this);
+			util.on(this.pInputBtn, "click", inputClick);
+		}
 	}
 	//创建Page按钮主体
 	Page.prototype.createMain = function(){
@@ -117,6 +122,9 @@
 		if(options.isLast){
 			html += '<a class="page-last">'+options.lastTxt+'</a>';
 		}
+		if(options.isText){
+			html += '<span class="page-input">第<input class="page-text" type="text" />页<input class="page-btn" type="button" value="确认" /></span>';
+		}
 		if(options.isTotal){
 			html += '<span class="page-total-info">共<i class="page-curr"></i>/<i class="page-total"></i>页</span>';
 		}
@@ -125,6 +133,9 @@
 		this.page = this.el.querySelector(".page-main");
 		this.pageCurr = this.el.querySelector(".page-curr");
 		this.pageTotal = this.el.querySelector(".page-total");
+		this.pInput = this.el.querySelector(".page-input");
+		this.pInputText = this.pInput.querySelector(".page-text");
+		this.pInputBtn = this.pInput.querySelector(".page-btn");
 	}
 	//创建分页按钮
 	Page.prototype.createPage = function(){
@@ -178,6 +189,21 @@
 				this.index = domIndex;
 			}
 		}
+		this.setPage();
+	}
+	Page.prototype.inputClick = function(){
+		var index = parseInt(this.pInputText.value);
+		if(!isNaN(index)){
+			if(index < 0){
+				index = 0;
+			}else if(index > )
+			this.index = (index < 0 ? 0 : (index > this.totalPage ? this.totalPage : index));
+			console.log(this.index)
+			this.setPage();
+		}
+	}
+	//设置跳转输入
+	Page.prototype.setPage = function(){
 		if(this.lastIndex != this.index){
 			this.createPage();
 			this.callback(this.index);
@@ -208,11 +234,13 @@
 	Page.prototype.setTotal = function(num){
 		this.totalSize = num;
 		this.totalPage = Math.ceil(this.totalSize / this.size); //总页数
+		this.setTotalText(this.totalPage);
 	}
 	//设置总页面
 	Page.prototype.setTotalText = function(num){
 		this.pageTotal.innerText = num;
 	}
+	
 	
 	window.Page = Page;
 })(window);

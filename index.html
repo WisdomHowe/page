@@ -15,14 +15,13 @@
 
 		<script type="text/javascript">
 			new Page(".page", {
-				size: 4,
+				size: 10,
 				firstTxt: "&lt;&lt;",
 				prevTxt: "&lt;",
 				nextTxt: "&gt;",
 				lastTxt: "&gt;&gt;",
-				total: 30, //先定义一个假的总数量
 				callback: function(index) {
-					//this.setTotal(total) 使用此方法修改总数量
+					this.setTotal(900) //使用此方法修改总数量
 					console.log(index)
 				}
 			});
